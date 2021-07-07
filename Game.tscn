@@ -1,0 +1,364 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Character.gd" type="Script" id=2]
+[ext_resource path="res://player_gui/ExperienceBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/Montserrat-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Label.gd" type="Script" id=5]
+[ext_resource path="res://ButtonKnowledge.gd" type="Script" id=6]
+[ext_resource path="res://ButtonVitality.gd" type="Script" id=7]
+[ext_resource path="res://ButtonInteligence.gd" type="Script" id=8]
+[ext_resource path="res://ButtonAgility.gd" type="Script" id=9]
+[ext_resource path="res://ButtonAbility.gd" type="Script" id=10]
+[ext_resource path="res://ButtonStrength.gd" type="Script" id=11]
+[ext_resource path="res://ButtonXP.gd" type="Script" id=12]
+[ext_resource path="res://ButtonLevel.gd" type="Script" id=13]
+[ext_resource path="res://ButtonSummonerSkill1Upgrade.gd" type="Script" id=14]
+[ext_resource path="res://ButtonSummonerClassUpgrade.gd" type="Script" id=15]
+[ext_resource path="res://ButtonSummonerClass.gd" type="Script" id=16]
+[ext_resource path="res://ButtonSummonerSkill2.gd" type="Script" id=17]
+[ext_resource path="res://ButtonWizardClassUpgrade.gd" type="Script" id=18]
+[ext_resource path="res://ButtonWizardSkill2Upgrade.gd" type="Script" id=19]
+[ext_resource path="res://ButtonSummonerSkill1.gd" type="Script" id=20]
+[ext_resource path="res://ButtonSummonerSkill2Upgrade.gd" type="Script" id=21]
+[ext_resource path="res://ButtonWizardSkill2.gd" type="Script" id=22]
+[ext_resource path="res://ButtonWizardSkill1Upgrade.gd" type="Script" id=23]
+[ext_resource path="res://ButtonWizardClass.gd" type="Script" id=24]
+[ext_resource path="res://ButtonWizardSkill1.gd" type="Script" id=25]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Character" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Interface" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 0, 120 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Interface"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.44892
+margin_top = 1.60714
+margin_right = 2.44897
+margin_bottom = 1.60712
+color = Color( 0.238983, 0.251691, 0.320313, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExperienceBar" parent="Interface" instance=ExtResource( 3 )]
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 414.765
+margin_top = 365.235
+margin_right = 1275.76
+margin_bottom = 434.235
+value = 28.0
+
+[node name="Label" type="Label" parent="Interface"]
+modulate = Color( 0.921569, 0.533333, 0.529412, 1 )
+anchor_left = 0.031
+anchor_top = 0.027
+anchor_right = 0.314
+anchor_bottom = 0.978
+margin_left = -0.18
+margin_top = -0.303312
+margin_right = -0.420013
+margin_bottom = -0.0233154
+custom_fonts/font = SubResource( 1 )
+text = "CharacterLevel: 4
+			Experience: 86
+			Next level: 23
+			StrengthLevel: 10
+			VitalityLevel: 10
+			KnowledgeLevel: 10
+			InteligenceLevel: 10
+			AgilityLevel: 10
+			AbilityLevel: 10
+			Attack: 60
+			MaxHealth: 100
+			MaxMana: 100
+			ExperienceMultiplier: 1
+			PixelsPerSecond: 160
+			CooldownMultiplier: 1
+			SkillPoints: 0"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonStrength" type="Button" parent="Interface"]
+anchor_left = 0.253
+anchor_top = 0.219
+anchor_right = 0.276
+anchor_bottom = 0.247
+margin_left = 0.159973
+margin_top = 0.319992
+margin_right = -0.280029
+margin_bottom = 0.159988
+text = "+"
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonVitality" type="Button" parent="Interface"]
+anchor_left = 0.23
+anchor_top = 0.281
+anchor_right = 0.252
+anchor_bottom = 0.308
+margin_left = -0.399994
+margin_top = -0.320007
+margin_right = 0.440002
+margin_bottom = 0.239975
+text = "+"
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonKnowledge" type="Button" parent="Interface"]
+anchor_left = 0.286
+anchor_top = 0.339
+anchor_right = 0.309
+anchor_bottom = 0.367
+margin_left = -0.0800171
+margin_top = -0.0800171
+margin_right = -0.52002
+margin_bottom = -0.240021
+text = "+"
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonInteligence" type="Button" parent="Interface"]
+anchor_left = 0.282
+anchor_top = 0.4
+anchor_right = 0.305
+anchor_bottom = 0.428
+margin_left = 0.039978
+margin_right = -0.400024
+margin_bottom = -0.160034
+text = "+"
+script = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAgility" type="Button" parent="Interface"]
+anchor_left = 0.224
+anchor_top = 0.46
+anchor_right = 0.247
+anchor_bottom = 0.487
+margin_left = 0.279999
+margin_top = -0.200012
+margin_right = -0.160004
+margin_bottom = 0.359985
+text = "+"
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonAbility" type="Button" parent="Interface"]
+anchor_left = 0.223
+anchor_top = 0.518
+anchor_right = 0.246
+anchor_bottom = 0.546
+margin_left = 0.559998
+margin_top = 0.0400085
+margin_right = 0.119995
+margin_bottom = -0.119995
+text = "+"
+script = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonXP" type="Button" parent="Interface"]
+anchor_left = 0.264
+anchor_top = 0.099
+anchor_right = 0.287
+anchor_bottom = 0.126
+margin_left = 0.21759
+margin_top = -0.223885
+margin_right = -0.222412
+margin_bottom = 0.336121
+text = "+"
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonLevel" type="Button" parent="Interface"]
+anchor_left = 0.265
+anchor_top = 0.039
+anchor_right = 0.287
+anchor_bottom = 0.067
+margin_left = -0.34848
+margin_top = -0.0238781
+margin_right = 0.491547
+margin_bottom = -0.18388
+text = "+"
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSummonerClass" type="Button" parent="Interface"]
+margin_left = 997.776
+margin_top = 99.551
+margin_right = 1067.78
+margin_bottom = 169.551
+text = "Invocador"
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSummonerClassUpgrade" type="Button" parent="Interface"]
+margin_left = 1043.54
+margin_top = 102.602
+margin_right = 1063.54
+margin_bottom = 122.602
+text = "+"
+script = ExtResource( 15 )
+
+[node name="ButtonSummonerSkill1" type="Button" parent="Interface"]
+margin_left = 944.179
+margin_top = 197.423
+margin_right = 1016.18
+margin_bottom = 267.423
+text = "Cargueiro"
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSummonerSkill1Upgrade" type="Button" parent="Interface"]
+margin_left = 991.068
+margin_top = 201.989
+margin_right = 1003.07
+margin_bottom = 221.989
+text = "+"
+script = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSummonerSkill2" type="Button" parent="Interface"]
+margin_left = 1048.03
+margin_top = 197.0
+margin_right = 1118.03
+margin_bottom = 267.0
+text = "Troca"
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSummonerSkill2Upgrade" type="Button" parent="Interface"]
+margin_left = 1094.55
+margin_top = 200.112
+margin_right = 1114.55
+margin_bottom = 220.112
+text = "+"
+script = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWizardClass" type="Button" parent="Interface"]
+margin_left = 756.418
+margin_top = 94.8672
+margin_right = 826.418
+margin_bottom = 164.867
+text = "Mago"
+script = ExtResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWizardClassUpgrade" type="Button" parent="Interface"]
+margin_left = 801.306
+margin_top = 97.1581
+margin_right = 821.306
+margin_bottom = 117.158
+text = "+"
+script = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWizardSkill1" type="Button" parent="Interface"]
+margin_left = 706.291
+margin_top = 194.944
+margin_right = 776.291
+margin_bottom = 264.944
+text = "Fogo"
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWizardSkill1Upgrade" type="Button" parent="Interface"]
+margin_left = 750.832
+margin_top = 197.572
+margin_right = 770.832
+margin_bottom = 217.572
+text = "+"
+script = ExtResource( 23 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWizardSkill2" type="Button" parent="Interface"]
+margin_left = 806.821
+margin_top = 194.888
+margin_right = 876.821
+margin_bottom = 264.888
+text = "Gelo"
+script = ExtResource( 22 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonWizardSkill2Upgrade" type="Button" parent="Interface"]
+margin_left = 854.683
+margin_top = 197.337
+margin_right = 874.683
+margin_bottom = 217.337
+text = "+"
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="experience_gained" from="Character" to="Interface/ExperienceBar" method="_on_Character_experience_gained"]
+[connection signal="ButtonPressed" from="Interface/ButtonStrength" to="Character" method="_on_ButtonStrength_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonStrength" to="." method="_on_ButtonStrength_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonVitality" to="Character" method="_on_ButtonVitality_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonVitality" to="." method="_on_ButtonVitality_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonKnowledge" to="Character" method="_on_ButtonKnowledge_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonKnowledge" to="." method="_on_ButtonKnowledge_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonInteligence" to="Character" method="_on_ButtonInteligence_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonInteligence" to="." method="_on_ButtonInteligence_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonAgility" to="Character" method="_on_ButtonAgility_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonAgility" to="." method="_on_ButtonAgility_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonAbility" to="Character" method="_on_ButtonAbility_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonAbility" to="." method="_on_ButtonAbility_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonXP" to="." method="_on_ButtonXP_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonLevel" to="Character" method="_on_ButtonLevel_ButtonPressed"]
+[connection signal="ButtonPressed" from="Interface/ButtonLevel" to="." method="_on_ButtonLevel_ButtonPressed"]
