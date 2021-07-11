@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://UI_Stuff/Counter/Money/MoneyCounter.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI_Stuff/Bar/ManaBar/ManaBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI_Stuff/Bar/LifeBar/LifeBar.tscn" type="PackedScene" id=3]
+[ext_resource path="res://UI_Stuff/UI.gd" type="Script" id=4]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bars" type="VBoxContainer" parent="."]
+margin_left = 70.0
+margin_top = 55.0
+margin_right = 610.0
+margin_bottom = 150.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LifeBar" parent="Bars" instance=ExtResource( 3 )]
+margin_right = 540.0
+margin_bottom = 53.0
+
+[node name="ManaBar" parent="Bars" instance=ExtResource( 2 )]
+margin_top = 57.0
+margin_right = 540.0
+margin_bottom = 95.0
+
+[node name="MoneyCounter" parent="." instance=ExtResource( 1 )]
+margin_left = 70.0
+margin_top = 155.0
+margin_right = 205.0
+margin_bottom = 219.0
+
+[connection signal="healthUpdated" from="." to="Bars/LifeBar" method="_on_UI_healthUpdated"]
+[connection signal="manaUpdated" from="." to="Bars/ManaBar" method="_on_UI_manaUpdated"]
+[connection signal="moneyUpdated" from="." to="MoneyCounter" method="_on_UI_moneyUpdated"]

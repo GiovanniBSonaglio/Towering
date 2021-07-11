@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://UI_Stuff/Bar/Bar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://UI_Stuff/Bar/ManaBar/bg2.png" type="Texture" id=2]
+[ext_resource path="res://UI_Stuff/Bar/ManaBar/fill2.png" type="Texture" id=3]
+[ext_resource path="res://UI_Stuff/Bar/ManaBar/MPInt.png" type="Texture" id=4]
+[ext_resource path="res://UI_Stuff/Bar/ManaBar/ManaBar.gd" type="Script" id=5]
+
+[node name="ManaBar" instance=ExtResource( 1 )]
+margin_top = -8.0
+margin_right = 464.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 464, 38 )
+script = ExtResource( 5 )
+
+[node name="Counter" parent="." index="0"]
+margin_bottom = 38.0
+region_rect = Rect2( 38.1919, 15.1477, 1.67017, 0 )
+patch_margin_left = 83
+patch_margin_top = 26
+patch_margin_right = 39
+patch_margin_bottom = 12
+
+[node name="Icon" parent="Counter" index="0"]
+margin_left = 0.0
+margin_top = -31.0
+margin_right = 60.0
+margin_bottom = 30.0
+texture = ExtResource( 4 )
+
+[node name="Label" parent="Counter" index="1"]
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_top = -18.0
+margin_bottom = 18.0
+text = ""
+
+[node name="TextureProgress" parent="." index="1"]
+margin_right = 464.0
+margin_bottom = 38.0
+value = 100.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
